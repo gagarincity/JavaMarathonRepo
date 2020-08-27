@@ -10,13 +10,12 @@ public class Task3 {
         while (i < 5) {
             double a = scanner.nextDouble();
             double b = scanner.nextDouble();
+            i++;
             if (b == 0) {
                 System.out.println("Деление на 0");
-                i++;
                 continue;
             }
             System.out.println(a / b);
-            i++;
         }
     }
 }
