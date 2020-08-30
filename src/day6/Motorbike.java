@@ -14,14 +14,11 @@ public class Motorbike {
         this.model = model;
     }
 
-    void info() {
-        System.out.println("Этот мотоцикл : " + model);
+    public void info() {
+        System.out.println("Это мотоцикл");
     }
 
-    int calculateYearDifference() {
-        System.out.print("Введите год для мото: ");
-        int years = scanner.nextInt() - year;
-        System.out.println("Разница между переданным годом и годом выпуска мото: " + years);
-        return years;
+    public int calculateYearDifference(int inputYear) {
+        return Math.abs(inputYear - year);
     }
 }

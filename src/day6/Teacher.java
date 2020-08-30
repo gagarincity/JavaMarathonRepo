@@ -17,7 +17,7 @@ public class Teacher {
         return subject;
     }
 
-    void rateStudent(Student student) {
+    public void rateStudent(Student student) {
         int score = (int) (Math.random() * 4 + 2);
         String scoreText = "никогда не появится этот текст";
         switch (score) {
@@ -34,6 +34,7 @@ public class Teacher {
                 scoreText = "отлично";
                 break;
         }
-        System.out.println("Преподаватель " + getName() + " оценил студента с именем " + student.getName() + " по предмету " + getSubject() + " на оценку " + scoreText);
+        System.out.println("Преподаватель " + this.name + " оценил студента с именем "
+                + student.getName() + " по предмету " + this.subject + " на оценку " + scoreText);
     }
 }

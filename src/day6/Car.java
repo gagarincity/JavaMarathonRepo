@@ -3,7 +3,6 @@ package day6;
 import java.util.Scanner;
 
 public class Car {
-    Scanner scanner = new Scanner(System.in);
     private int year;
     private String color;
     private String model;
@@ -32,14 +31,11 @@ public class Car {
         return model;
     }
 
-    void info() {
-        System.out.println("Это автомобиль: " + model);
+    public void info() {
+        System.out.println("Это автомобиль");
     }
 
-    int calculateYearDifference() {
-        System.out.print("Введите год для авто: ");
-        int years = scanner.nextInt() - year;
-        System.out.println("Разница между переданным годом и годом выпуска авто: " + years);
-        return years;
+    public int calculateYearDifference(int inputYear) {
+        return Math.abs(inputYear - year);
     }
 }

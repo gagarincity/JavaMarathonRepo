@@ -1,6 +1,4 @@
-package day6;
-
-import java.util.Scanner;
+package day7;
 
 public class Plane {
     private String manufacturer;
@@ -32,5 +30,14 @@ public class Plane {
 
     public void fillUp(int fuel) {
         fuelInTank += fuel;
+    }
+
+    public static void whoLonger(Plane plane1, Plane plane2) {
+        if (plane1.length > plane2.length)
+            System.out.println("Первый самолет длиннее");
+        else if (plane2.length > plane1.length) {
+            System.out.println("Второй самолет длиннее");
+        } else
+            System.out.println("Оба самолета одинаковой длины");
     }
 }
