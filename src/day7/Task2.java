@@ -8,7 +8,6 @@ public class Task2 {
         Player player4 = new Player(94);
         Player player5 = new Player(95);
         Player player6 = new Player(99);
-
         Player.info();
 
         for (int i = player1.getStamina(); i > 0; i--)

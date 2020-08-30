@@ -22,7 +22,6 @@ public class Plane {
     public void setLength(int length) {
         this.length = length;
     }
-
     public void info() {
         System.out.println("Изготовитель: " + manufacturer + ", год выпуска: " + year
                 + ", длина: " + length + ", вес: " + weight + ", объем топлива в баке: " + fuelInTank);
