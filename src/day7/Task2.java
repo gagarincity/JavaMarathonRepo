@@ -11,9 +11,8 @@ public class Task2 {
         Player.info();
 
         for (int i = player1.getStamina(); i > 0; i--)
-            Player.run(player1);
+            player1.run();
 
         Player.info();
-
     }
 }

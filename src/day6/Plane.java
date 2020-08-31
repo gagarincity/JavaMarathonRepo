@@ -1,7 +1,5 @@
 package day6;
 
-import java.util.Scanner;
-
 public class Plane {
     private String manufacturer;
     private int year;

@@ -1,4 +1,4 @@
-package day7;
+package day8;
 
 public class Plane {
     private String manufacturer;
@@ -23,10 +23,6 @@ public class Plane {
         this.length = length;
     }
 
-    public int getLength() {
-        return length;
-    }
-
     public void info() {
         System.out.println("Изготовитель: " + manufacturer + ", год выпуска: " + year
                 + ", длина: " + length + ", вес: " + weight + ", объем топлива в баке: " + fuelInTank);
@@ -36,12 +32,8 @@ public class Plane {
         fuelInTank += fuel;
     }
 
-    public static void whoLonger(Plane plane1, Plane plane2) {
-        if (plane1.getLength() > plane2.getLength())
-            System.out.println("Первый самолет длиннее");
-        else if (plane2.getLength() > plane1.getLength()) {
-            System.out.println("Второй самолет длиннее");
-        } else
-            System.out.println("Оба самолета одинаковой длины");
+    public String toString() {
+        return "Изготовитель: " + manufacturer + ", год выпуска: " + year
+                + ", длина: " + length + ", вес: " + weight + ", объем топлива в баке: " + fuelInTank;
     }
 }
