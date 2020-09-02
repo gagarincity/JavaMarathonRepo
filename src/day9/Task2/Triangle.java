@@ -4,7 +4,6 @@ public class Triangle extends Figure {
     private double lengthSideA;
     private double lengthSideB;
     private double lengthSideC;
-
     public Triangle(double lengthSideA, double lengthSideB, double lengthSideC, String color) {
         super(color);
         this.lengthSideA = lengthSideA;
