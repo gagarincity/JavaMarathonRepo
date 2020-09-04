@@ -1,4 +1,4 @@
-package day10;
+package day11;
 
 public interface Worker {
     void doWork();
