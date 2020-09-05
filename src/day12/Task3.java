@@ -32,11 +32,10 @@ public class Task3 {
         Collections.shuffle(musicBands);
 
         List<MusicBand> musicBands2 = new ArrayList<>();
-        for (int i = 0; i < musicBands.size(); i++)
-            if (musicBands.get(i).getYear() > 2000)
-                musicBands2.add(musicBands.get(i));
-
-
+        for (MusicBand band : musicBands) {
+            if (band.getYear() > 2000)
+                musicBands2.add(band);
+        }
         System.out.println(musicBands);
         System.out.println(musicBands2);
     }

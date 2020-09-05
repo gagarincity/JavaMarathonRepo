@@ -1,32 +1,32 @@
 package day12.Task5;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MusicBand3 {
     private String name;
     private int year;
-    private ArrayList<MusicArtist> musicArtists;
+    private List<MusicArtist> musicArtist;
 
-    public ArrayList<MusicArtist> getMusicArtists() {
-        return musicArtists;
+    public List<MusicArtist> getMusicArtist() {
+        return musicArtist;
     }
 
-    public MusicBand3(String name, int year, ArrayList<MusicArtist> musicArtists) {
+    public MusicBand3(String name, int year, List<MusicArtist> musicArtist) {
         this.name = name;
         this.year = year;
-        this.musicArtists = musicArtists;
+        this.musicArtist = musicArtist;
     }
 
     @Override
     public String toString() {
         return "Музыкальная группа: " +
                 "имя: '" + name + '\'' +
-                ", год: " + year + ", " + getMusicArtists();
+                ", год: " + year + ", " + getMusicArtist();
     }
 
-    public void compareMusicBand(MusicBand3 musicBand) {
-        ArrayList<MusicArtist> copyBandList = musicBand.getMusicArtists();
-        musicArtists.addAll(copyBandList);
-        copyBandList.removeAll(musicArtists);
+    public static void mergeMusicBand(MusicBand3 a, MusicBand3 b) {
+        for (MusicArtist member : a.getMusicArtist())
+            b.getMusicArtist().add(member);
+        a.getMusicArtist().clear();
     }
 }

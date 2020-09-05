@@ -1,17 +1,18 @@
 package day12;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MusicBand2 {
     private String name;
     private int year;
-    private ArrayList<String> musicArtist;
+    private List<String> musicArtist;
 
-    public ArrayList<String> getMusicBandMember() {
+    public List<String> getMusicArtist() {
         return musicArtist;
     }
 
-    public MusicBand2(String name, int year, ArrayList<String> musicArtist) {
+    public MusicBand2(String name, int year, List<String> musicArtist) {
         this.name = name;
         this.year = year;
         this.musicArtist = musicArtist;
@@ -21,13 +22,13 @@ public class MusicBand2 {
     public String toString() {
         return "MusicBand{" +
                 "name='" + name + '\'' +
-                ", year=" + year + " " + getMusicBandMember() +
+                ", year=" + year + " " + getMusicArtist() +
                 '}';
     }
 
-    public void compareMusicBand(MusicBand2 musicBand) {
-        ArrayList<String> copyBandList = musicBand.getMusicBandMember();
-            musicArtist.addAll(copyBandList);
-            copyBandList.removeAll(musicArtist);
+    public static void mergeMusicBand(MusicBand2 a, MusicBand2 b) {
+        for (String members : a.getMusicArtist())
+            b.getMusicArtist().add(members);
+        a.getMusicArtist().clear();
     }
 }
