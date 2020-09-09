@@ -33,6 +33,7 @@ public class Task2 {
             if (endIndex > 1000)
                 break;
         }
+
         fw2.write(numbersList + " ");
         fw2.close();
         double sum2 = 0;

@@ -2,14 +2,11 @@ package day16;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("Task1Numbers");
-
         Scanner sc = new Scanner(file);
         String line = sc.nextLine();
         String[] numbers = line.split(" ");
