@@ -13,8 +13,9 @@ public class Task2 {
         FileWriter fw2 = new FileWriter("day16File2");
 
         int[] numbers = new int[100];
+        int bound = 1000;
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(1000);
+            numbers[i] = random.nextInt(bound);
             fw1.write(numbers[i] + " ");
         }
         fw1.close();
@@ -30,14 +31,15 @@ public class Task2 {
             numbersList.add(averageValue);
             startIndex += 20;
             endIndex += 20;
-            if (endIndex > 1000)
+            if (endIndex > bound)
                 break;
         }
 
         fw2.write(numbersList + " ");
         fw2.close();
         double sum2 = 0;
-        for (int i = 0; i < 50; i++) {
+        int quantity = 50;
+        for (int i = 0; i < quantity; i++) {
             sum2 += numbersList.get(i);
         }
         System.out.println((int) sum2);
