@@ -19,19 +19,30 @@ public class Human {
         return age;
     }
 
-    public static List<Human> parseFileToObjList() throws FileNotFoundException {
+    public static List<Human> parseFileToObjList() {
         File file = new File("people");
-        List<Human> human = new ArrayList<>();
-        Scanner scanner = new Scanner(file);
-        String line;
-        while (scanner.hasNext()) {
-            line = scanner.nextLine();
-            String[] x = line.split(" ");
-            String name = x[0];
-            int age = Integer.parseInt(x[1]);
-            human.add(new Human(name, age));
+        List<Human> namesAndAges = new ArrayList<>();
+
+        try {
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] human = line.split(" ");
+
+                if (Integer.parseInt(human[1]) < 0)
+                    throw new IllegalArgumentException();
+                Human human1 = new Human(human[0], Integer.parseInt(human[1]));
+                namesAndAges.add(human1);
+            }
+
+            return namesAndAges;
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Неккоректный входной файл");
         }
-        return human;
+        return null;
     }
 
     @Override

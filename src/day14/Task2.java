@@ -2,7 +2,6 @@ package day14;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,32 +26,32 @@ import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
-        try {
-            System.out.println(parseFileToStringList());
-            for (int i = 0; i < parseFileToStringList().size(); i++) {
-                String[] agePeople = parseFileToStringList().get(i).split(" ");
-                int age = Integer.parseInt(agePeople[1]);
-                if (age <= 0) {
-                    try {
-                        throw new IOException();
-                    } catch (IOException e) {
-                        System.out.println("Некорректный входной файл");
-                    }
-                }
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден");
-        }
+        System.out.println(parseFileToStringList());
     }
 
-    public static List<String> parseFileToStringList() throws FileNotFoundException {
+    public static List<String> parseFileToStringList() {
         File file = new File("people");
         List<String> namesAndAges = new ArrayList<>();
-        Scanner scanner = new Scanner(file);
 
-        while (scanner.hasNext())
-            namesAndAges.add(scanner.nextLine());
+        try {
+            Scanner scanner = new Scanner(file);
 
-        return namesAndAges;
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] human = line.split(" ");
+
+                if (Integer.parseInt(human[1]) < 0)
+                    throw new IllegalArgumentException();
+
+                namesAndAges.add(line);
+            }
+
+            return namesAndAges;
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Неккоректный входной файл");
+        }
+        return null;
     }
 }
